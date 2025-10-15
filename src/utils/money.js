@@ -1,0 +1,1 @@
+export const money = (n) => new Intl.NumberFormat('en-PK', {style:'currency', currency:'PKR'}).format(n)

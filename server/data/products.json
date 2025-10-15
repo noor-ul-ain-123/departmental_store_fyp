@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Organic Apples (1kg)",
+    "category": "Grocery",
+    "price": 3.49,
+    "rating": 4.5,
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=1200&auto=format&fit=crop",
+    "description": "Crisp, sweet, pesticide-free apples from local farms."
+  },
+  {
+    "id": 2,
+    "title": "Whole Wheat Bread",
+    "category": "Bakery",
+    "price": 2.29,
+    "rating": 4.2,
+    "image": "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=1200&auto=format&fit=crop",
+    "description": "Freshly baked bread with whole grains and no added sugar."
+  },
+  {
+    "id": 3,
+    "title": "Extra Virgin Olive Oil (1L)",
+    "category": "Grocery",
+    "price": 12.99,
+    "rating": 4.7,
+    "image": "https://images.unsplash.com/photo-1546549039-49e2b3d0175e?q=80&w=1200&auto=format&fit=crop",
+    "description": "Cold-pressed olive oil perfect for salads and light cooking."
+  },
+  {
+    "id": 4,
+    "title": "Shampoo - Aloe & Mint",
+    "category": "Personal Care",
+    "price": 6.99,
+    "rating": 4.1,
+    "image": "https://images.unsplash.com/photo-1596464716121-e9bb72b1d9df?q=80&w=1200&auto=format&fit=crop",
+    "description": "Refreshing shampoo that strengthens and nourishes hair."
+  },
+  {
+    "id": 5,
+    "title": "Chocolate Cookies",
+    "category": "Snacks",
+    "price": 1.99,
+    "rating": 4.3,
+    "image": "https://images.unsplash.com/photo-1598373182133-52452f7691ef?q=80&w=1200&auto=format&fit=crop",
+    "description": "Crunchy cookies with rich chocolate chips."
+  },
+  {
+    "id": 6,
+    "title": "Laundry Detergent (2kg)",
+    "category": "Household",
+    "price": 9.49,
+    "rating": 4.0,
+    "image": "https://images.unsplash.com/photo-1596461404969-9ae70e03fdd8?q=80&w=1200&auto=format&fit=crop",
+    "description": "Powerful cleaning with a gentle scent for all fabrics."
+  },
+  {
+    "id": 7,
+    "title": "Greek Yogurt (500g)",
+    "category": "Dairy",
+    "price": 2.99,
+    "rating": 4.6,
+    "image": "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=80&w=1200&auto=format&fit=crop",
+    "description": "Creamy yogurt high in protein and low in sugar."
+  },
+  {
+    "id": 8,
+    "title": "LED Bulb (9W)",
+    "category": "Electronics",
+    "price": 1.49,
+    "rating": 4.4,
+    "image": "https://images.unsplash.com/photo-1514496959998-c01c3c61a3fa?q=80&w=1200&auto=format&fit=crop",
+    "description": "Energy-efficient LED bulb with 20,000 hours lifespan."
+  },
+  {
+    "id": 9,
+    "title": "Premium Basmati Rice (5kg)",
+    "category": "Grocery",
+    "price": 10.99,
+    "rating": 4.8,
+    "image": "https://images.unsplash.com/photo-1625944529260-48f486930651?q=80&w=1200&auto=format&fit=crop",
+    "description": "Long-grain, aromatic rice perfect for daily meals."
+  },
+  {
+    "id": 10,
+    "title": "Toothpaste - Whitening",
+    "category": "Personal Care",
+    "price": 2.49,
+    "rating": 4.2,
+    "image": "https://images.unsplash.com/photo-1556228453-efd1e5b46f1f?q=80&w=1200&auto=format&fit=crop",
+    "description": "Fluoride-based whitening toothpaste for a brighter smile."
+  }
+]
