@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import ShopLayout from './layouts/ShopLayout.jsx'
 import RequireAuth from './components/RequireAuth.jsx'
 import Home from './pages/Home.jsx'
@@ -25,11 +25,6 @@ import AdminLayout from './admin/AdminLayout.jsx'
 import AdminDashboard from './admin/Dashboard.jsx'
 import AdminProducts from './admin/Products.jsx'
 import AdminOrders from './admin/Orders.jsx'
-import AdminUsers from './admin/Users.jsx'
-import AdminInventory from './admin/Inventory.jsx'
-import AdminReports from './admin/Reports.jsx'
-import AdminSettings from './admin/Settings.jsx'
-import AdminMedia from './admin/Media.jsx'
 import { CartProvider } from './contexts/cart-store.js'
 
 export default function App(){
@@ -62,11 +57,7 @@ export default function App(){
           <Route index element={<AdminDashboard/>}/>
           <Route path="products" element={<AdminProducts/>}/>
           <Route path="orders" element={<AdminOrders/>}/>
-          <Route path="users" element={<AdminUsers/>}/>
-          <Route path="inventory" element={<AdminInventory/>}/>
-          <Route path="reports" element={<AdminReports/>}/>
-          <Route path="settings" element={<AdminSettings/>}/>
-          <Route path="media" element={<AdminMedia/>}/>
+          <Route path="*" element={<Navigate to="/admin" replace />} />
         </Route>
       </Routes>
     </CartProvider>

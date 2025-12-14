@@ -2,11 +2,11 @@ import { Link, Outlet } from 'react-router-dom'
 
 import { useAuth } from '../contexts/auth-store.js'
 import { Navigate } from 'react-router-dom'
-export default function AdminLayout(){
+export default function AdminLayout() {
   const { isAdmin } = useAuth()
   console.log(isAdmin);
-  
-  if(!isAdmin) return <Navigate to="/signin" replace />
+
+  if (!isAdmin) return <Navigate to="/signin" replace />
 
   return (
     <div className="min-h-screen grid md:grid-cols-[240px,1fr]">
@@ -16,16 +16,11 @@ export default function AdminLayout(){
           <Link to="/admin" className="link">Dashboard</Link>
           <Link to="/admin/products" className="link">Products</Link>
           <Link to="/admin/orders" className="link">Orders</Link>
-          <Link to="/admin/users" className="link">Users</Link>
-          <Link to="/admin/inventory" className="link">Inventory</Link>
-          <Link to="/admin/reports" className="link">Reports</Link>
-          <Link to="/admin/settings" className="link">Settings</Link>
-          <Link to="/admin/media" className="link">Media</Link>
           <Link to="/" className="link">Back to Store</Link>
         </nav>
       </aside>
       <main className="p-6">
-        <Outlet/>
+        <Outlet />
       </main>
     </div>
   )

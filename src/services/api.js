@@ -84,3 +84,17 @@ export async function getMyOrder(id){
   if(!res.ok) throw new Error('Not found')
   return await res.json()
 }
+
+export async function sendContactMessage(payload){
+  const hdr = useAuth.getState().authHeader()
+
+  const res = await fetch(`${BASE}/contact`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...hdr },
+    body: JSON.stringify(payload),
+  })
+
+  const data = await res.json().catch(() => ({}))
+  if(!res.ok) throw new Error(data?.error || `Failed (${res.status})`)
+  return data
+}

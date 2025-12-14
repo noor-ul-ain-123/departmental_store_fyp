@@ -1,6 +1,34 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { listProducts } from '../services/api.js'
 
 export default function Home(){
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    (async () => {
+      try {
+        // Fetch products once and extract categories (same source as Products page)
+        const res = await listProducts({ q: '', category: '', page: 1, page_size: 200 })
+        const cats = Array.from(
+          new Set((res.items || []).map(p => p.category).filter(Boolean))
+        )
+
+        // Optional: control which categories appear & in what order
+        const preferredOrder = ['Grocery', 'Electronics', 'Dairy', 'Snacks', 'Bakery']
+        const ordered = preferredOrder.filter(c => cats.includes(c))
+
+        // Fallback: if preferred categories not found, show whatever exists
+        setCategories(ordered.length ? ordered : cats)
+      } catch (e) {
+        console.log('Home categories load failed:', e)
+
+        // Safe fallback so UI doesn't break
+        setCategories(['Grocery', 'Electronics', 'Dairy', 'Snacks', 'Bakery'])
+      }
+    })()
+  }, [])
+
   return (
     <div className="space-y-8">
       <section className="relative overflow-hidden rounded-3xl border border-gray-200 bg-gradient-to-br from-brand-100 to-white p-8 md:p-12">
@@ -34,9 +62,15 @@ export default function Home(){
           <h2 className="text-xl font-bold">Popular Categories</h2>
           <Link to="/products" className="link">View all</Link>
         </div>
-        <div className="mt-4 grid grid-cols-2 md:grid-cols-6 gap-3">
-          {['Grocery','Bakery','Snacks','Personal Care','Household','Electronics'].map(c=>(
-            <Link key={c} to={`/products?category=${encodeURIComponent(c)}`} className="card p-4 text-center hover:border-brand-500/40">
+
+        {/* Same categories as Products page filters */}
+        <div className="mt-4 grid grid-cols-2 md:grid-cols-5 gap-3">
+          {categories.map(c => (
+            <Link
+              key={c}
+              to={`/products?category=${encodeURIComponent(c)}`}
+              className="card p-4 text-center hover:border-brand-500/40"
+            >
               {c}
             </Link>
           ))}
